@@ -67,16 +67,26 @@ class LinkedList:
             curr = next
         self.head = prev
 
+    def remove_duplicates(self):
+        curr = self.head
+        prev = None
+
+        while curr:
+            if curr.value == curr.next.value:
+                curr.next = curr.next.next
+
 ll = LinkedList()
+ll.insert(1)
 ll.insert(1)
 ll.insert(2)
 ll.insert(3)
 ll.insert(4)
+# ll.print()
+# ll.remove(4)
+# ll.print()
+# ll.insert(4)
+# ll.print()
+# ll.rev()
+# ll.print()
+# ll.rev()
 ll.print()
-ll.remove(4)
-ll.print()
-ll.insert(4)
-ll.print()
-ll.rev()
-ll.print()
-

@@ -46,7 +46,7 @@ def Random_Ptr(head):
             new_list.next = new_list.next.next
         old_list = old_list.next
         new_list = new_list.next
-        
+
     return new_head
 
 

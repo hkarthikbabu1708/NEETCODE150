@@ -663,3 +663,17 @@ from collections import  defaultdict
 # nums = [2,3,1,2,4,3]
 # target = 7
 # print(min_size_sub_array_sum(nums, target))
+
+# def max_subarray(nums):
+#     res = nums[0]
+#     total = 0
+#
+#     for n in nums:
+#         total += n
+#         res = max(res, total)
+#         if total < 0:
+#             total = 0
+#     return res
+#
+# nums = [-2,1,-3,4,-1,2,1,-5,4]
+# print(max_subarray(nums))

@@ -247,7 +247,7 @@ from bisect import bisect_left, bisect_right
 
 # Intersection of Two Linked Lists
 # def inter_linklists(headA, headB):
-#     if not headA or headB:
+#     if not headA or not headB:
 #         return None
 #
 #     one = headA
