@@ -122,8 +122,137 @@
 # digits = [1,9,9]
 # print(plus_one(digits))
 
+# def climb_stairs(n):
+#     if n == 1:
+#         return 1
+#     if n == 2:
+#         return 2
+#
+#     dp = [0]  * (n + 1)
+#     dp[1] = 1
+#     dp[2] = 2
+#
+#     for i in range(3, n+1):
+#         dp[i] = dp[i-1] + dp[i-2]
+#     return dp[n]
+#
+# n = 3
+# print(climb_stairs(n))
 
+# Merge Sorted Array
+# def merge(nums1, nums2):
+#     i = j = 0
+#     res = []
+#
+#     while i < len(nums1) and j < len(nums2):
+#         if nums1[i] < nums2[j]:
+#             res.append(nums1[i])
+#             i += 1
+#         else:
+#             res.append(nums2[j])
+#             j += 1
+#
+#     while i < len(nums1):
+#         res.append(nums1[i])
+#         i += 1
+#
+#     while j < len(nums2):
+#         res.append(nums2[j])
+#         j += 1
+#
+#     return res
+# nums1 = [1, 2, 3]
+# nums2 = [4, 5, 6,7, 8]
+# print(merge(nums1, nums2))
 
+# def merge(nums1,m, nums2,n):
+#     i = m - 1
+#     j = n - 1
+#     k = len(nums1) - 1
+#     print(i, j, k)
+#
+#     while i >= 0 and j >= 0:
+#         if nums1[i] > nums2[j]:
+#             nums1[k] = nums1[i]
+#             i -= 1
+#         else:
+#             nums1[k] = nums2[j]
+#             j -= 1
+#         k -= 1
+#
+#     # If there are remaining elements in nums2
+#     while j >= 0:
+#         nums1[k] = nums2[j]
+#         j -= 1
+#         k -= 1
+#
+#
+# nums1 = [1, 2, 3, 0, 0, 0]
+# m = 3
+# nums2 = [2, 5, 6]
+# n = 3
+# print(merge(nums1, m, nums2, n))
 
+# Binary Tree Inorder Traversal
+#left root right
+# def inorderTraversal(root):
+#     res = []
+#     def traverse(root):
+#         if not root:
+#             return None
+#         traverse(root.left)
+#         res.append(root.value)
+#         traverse(root.right)
+#     traverse(root)
+#     return res
 
+# Symmetric Tree
+# def isSymmetric(root):
+#     if not root:
+#         return True
+#
+#     def helper(left, right):
+#         if not left and not right:
+#             return True
+#         if not left or not right:
+#             return False
+#
+#         return ((left.val == right.val) and
+#                 (helper(left.right, right.left)) and
+#                 (helper(left.left, right.right)))
+#
+#     return helper(root.left, root.right)
 
+# Convert Sorted Array to Binary Search Tree
+# def sortedArrayToBST(nums):
+#     mid = len(nums) // 2
+#     root = Node(nums[mid])
+#     root.left = sortedArrayToBST(nums[:mid])
+#     root.right = sortedArrayToBST(nums[mid+1:])
+#     return root
+
+# def maxProfit(prices):
+#     max_profit = 0
+#     min_price = float('inf')
+#
+#     for p in prices:
+#         min_price = min(min_price, p)
+#         curr_profit = p - min_price
+#         max_profit = max(curr_profit, max_profit)
+#     return max_profit
+#
+# prices = [7, 1, 5, 3, 6, 4]
+# print(maxProfit(prices))
+
+def getIntersectionNode(heada, headb):
+    if not heada or not headb:
+        return Null
+
+    one = heada
+    two = headb
+
+    while one != two:
+        one = one.next if one else headb
+        two = two.next if two else heada
+
+    return one
