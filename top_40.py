@@ -501,21 +501,35 @@ import heapq
 #
 #     return root
 
-def diameter_bt(root):
-    diameter = 0
-    def height(node):
-        nonlocal diameter
-        if not node:
-            return 0
+# def diameter_bt(root):
+#     diameter = 0
+#     def height(node):
+#         nonlocal diameter
+#         if not node:
+#             return 0
+#
+#         left_height = height(node.left)
+#         right_height = height(node.right)
+#
+#         diameter = max(diameter, left_height+right_height)
+#         return 1 + max(left_height, right_height)
+#
+#     height(root)
+#     return diameter
 
-        left_height = height(node.left)
-        right_height = height(node.right)
-
-        diameter = max(diameter, left_height+right_height)
-        return 1 + max(left_height, right_height)
-
-    height(root)
-    return diameter
+# def rot_arr(nums, k):
+#     n = len(nums)
+#     k = k % n
+#
+#     nums.reverse()
+#     print(nums)
+#     nums[:k] = reversed(nums[:k])
+#     nums[k:] = reversed(nums[k:])
+#     print(nums)
+#
+# nums = [1, 2, 3, 4, 5, 6, 7]
+# k = 3
+# print(rot_arr(nums, k))
 
 
 
